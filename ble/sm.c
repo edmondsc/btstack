@@ -2059,7 +2059,7 @@ static sm_connection_t * sm_get_connection_for_handle(uint16_t con_handle){
 }
 
 static sm_connection_t * sm_get_connection(uint8_t addr_type, bd_addr_t address){
-    hci_connection_t * hci_con = hci_connection_for_bd_addr_and_type(address, addr_type);
+    hci_connection_t * hci_con = hci_connection_for_bd_addr_and_type(address, (bd_addr_type_t)addr_type);
     if (!hci_con)  return NULL;
     return &hci_con->sm_connection;
 }

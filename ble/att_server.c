@@ -148,7 +148,7 @@ static void att_event_packet_handler (uint8_t packet_type, uint16_t channel, uin
                 	break;
 
                 case HCI_EVENT_DISCONNECTION_COMPLETE:
-                    att_clear_transaction_queue(&att_connection);
+                    att_clear_transaction_queue();
                     att_connection.con_handle = 0;
                     att_handle_value_indication_handle = 0; // reset error state
                     // restart advertising if we have been connected before

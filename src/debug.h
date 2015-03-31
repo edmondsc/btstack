@@ -61,13 +61,13 @@ static inline void __log_unused(const char *format, ...) {
 #define __log_unused(...)
 #endif
 
-#ifdef __AVR__
-#define HCI_DUMP_LOG(format, ...) hci_dump_log_P(PSTR(format), ## __VA_ARGS__)
-#define PRINTF(format, ...)       printf_P(PSTR(format), ## __VA_ARGS__)
-#else
-#define HCI_DUMP_LOG(format, ...) hci_dump_log(format, ## __VA_ARGS__)
-#define PRINTF(format, ...)       printf(format, ## __VA_ARGS__)
-#endif
+// #ifdef __AVR__
+// #define HCI_DUMP_LOG(format, ...) hci_dump_log_P(PSTR(format), ## __VA_ARGS__)
+// #define PRINTF(format, ...)       printf_P(PSTR(format), ## __VA_ARGS__)
+// #else
+// #define HCI_DUMP_LOG(format, ...) hci_dump_log(format, ## __VA_ARGS__)
+// #define PRINTF(format, ...)       printf(format, ## __VA_ARGS__)
+// #endif
 
 #ifdef ENABLE_LOG_DEBUG
 #ifdef HAVE_HCI_DUMP
