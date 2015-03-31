@@ -170,13 +170,13 @@ void embedded_execute_once(void) {
 #endif
     
     // disable IRQs and check if run loop iteration has been requested. if not, go to sleep
-    hal_cpu_disable_irqs();
-    if (trigger_event_received){
-        trigger_event_received = 0;
-        hal_cpu_enable_irqs();
-    } else {
-        hal_cpu_enable_irqs_and_sleep();
-    }
+    // hal_cpu_disable_irqs();
+    // if (trigger_event_received){
+    //     trigger_event_received = 0;
+    //     hal_cpu_enable_irqs();
+    // } else {
+    //     hal_cpu_enable_irqs_and_sleep();
+    // }
 }
 
 /**
@@ -231,7 +231,7 @@ static void embedded_init(void){
 #endif
 }
 
-const run_loop_t run_loop_embedded = {
+extern "C" const run_loop_t run_loop_embedded = {
     &embedded_init,
     &embedded_add_data_source,
     &embedded_remove_data_source,
