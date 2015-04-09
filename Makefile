@@ -17,10 +17,11 @@ OBJECTS = \
     build/src/l2cap_signaling.o \
     build/src/rfcomm.o \
     build/src/sdp_util.o \
+    build/src/sdp.o \
     build/ble/att.o \
     build/ble/att_dispatch.o \
     build/ble/att_server.o \
-    build/ble/l2cap_le.o \
+    build/src/l2cap.o \
 	build/ble/sm.o \
     build/ble/le_device_db_memory.o \
 
