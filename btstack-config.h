@@ -13,7 +13,7 @@
 // #define ENABLE_LOG_INFO 
 #define ENABLE_LOG_ERROR
 
-#define HCI_ACL_PAYLOAD_SIZE 512
+#define HCI_ACL_PAYLOAD_SIZE (512 + 64)
 
 // 
 #define MAX_SPP_CONNECTIONS 1
