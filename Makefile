@@ -1,4 +1,4 @@
-include ../Makefile.inc
+include ../../Makefile.inc
 
 DEFINES += $(DEFINES_EXT)
 LOCAL_BUILD = $(GPP) $(OPT) $(FLAGS) -c $(INCLUDES) $(TOOLCHAIN) -I include -I ble -I src -c $(CPU) $(DEFINES)
