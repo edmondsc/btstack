@@ -10,9 +10,6 @@
 
 #define HAVE_BLE
 
-// #define ENABLE_LOG_INFO 
-#define ENABLE_LOG_ERROR
-
 #define HCI_ACL_PAYLOAD_SIZE (512 + 64)
 
 // 
@@ -33,10 +30,10 @@
 
 int XIMPrintf(unsigned int level, const char* format, ...);
 
-#define PRINTF(format, ...) XIMPrintf(1, format, ## __VA_ARGS__);
+#define PRINTF(format, ...) XIMPrintf(0, format, ## __VA_ARGS__);
 
-#define ENABLE_LOG_DEBUG
-#define ENABLE_LOG_INFO
-#define ENABLE_LOG_ERROR
+// #define ENABLE_LOG_DEBUG
+// #define ENABLE_LOG_INFO
+// #define ENABLE_LOG_ERROR
 
 #endif

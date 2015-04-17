@@ -545,7 +545,6 @@ static int rfcomm_send_packet_for_multiplexer(rfcomm_multiplexer_t *multiplexer,
 static int rfcomm_send_uih_prepared(rfcomm_multiplexer_t *multiplexer, uint8_t dlci, uint16_t len){
 
     uint8_t address = (1 << 0) | (multiplexer->outgoing << 1) | (dlci << 2); 
-    uint8_t control = BT_RFCOMM_UIH;
 
     uint8_t * rfcomm_out_buffer = l2cap_get_outgoing_buffer();
     
@@ -566,7 +565,7 @@ static int rfcomm_send_uih_prepared(rfcomm_multiplexer_t *multiplexer, uint8_t d
         credits_taken++;
         multiplexer->l2cap_credits--;
     } else {
-        log_info( "rfcomm_send_uih_prepared addr %02x, ctrl %02x size %u without l2cap credits", address, control, pos);
+        log_info( "rfcomm_send_uih_prepared addr %02x, ctrl %02x size %u without l2cap credits", address, BT_RFCOMM_UIH, pos);
     }
     
     int err = l2cap_send_prepared(multiplexer->l2cap_cid, pos);
